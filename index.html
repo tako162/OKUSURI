@@ -170,8 +170,19 @@
         <div class="original-box-shadow-base" style="height:450px; width:910px; border-radius: 91px;">
             <p class="btn-font">ここにコンテンツがはいる（３個の時）</p>
         </div>
-        <button class="original-box-shadow" type="button" onclick="window.location.reload()"><span
-                style="color:#FF0000">R</span></button>
+
+        <p id="msg">現在のページを再読み込みします</p>
+        <input class="original-box-shadow" type="button" value="reload" id="btnReload">
+        <script>
+            let d = new Date();
+            let element = document.getElementById('msg');
+            element.insertAdjacentHTML('afterend', '<p>' + d.toTimeString() + '</p>');
+            let btnReload = document.getElementById('btnReload');
+            btnReload.addEventListener('click', function () {
+                location.reload();
+            });
+        </script>
+
 </body>
 
 </html>
